@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://fqk3j8xpsshm"]
+[gd_scene load_steps=9 format=3 uid="uid://fqk3j8xpsshm"]
 
 [ext_resource type="Script" uid="uid://bk30kqpaloj50" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cn7ddiwfleaub" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://chqk2eqwhagme" path="res://level/level_manager.gd" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://db8t3ry6t5xw" path="res://level/level.tscn" id="3_lquwl"]
+[ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="5_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_color = Color(0.9, 0.06299999, 0.06299999, 1)
+
+[sub_resource type="Theme" id="Theme_lquwl"]
+
+[sub_resource type="Theme" id="Theme_7mycd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -36,7 +41,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Ui/HBoxContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(863, 648)
+size = Vector2i(1508, 1080)
 render_target_update_mode = 4
 
 [node name="helllo" type="Label" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport"]
@@ -60,8 +65,95 @@ position = Vector2(375, 375)
 unique_name_in_owner = true
 zoom = Vector2(0.364, 0.364)
 
-[node name="ColorRect" type="ColorRect" parent="Ui/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Ui/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.33
-color = Color(1, 0.68, 0.68, 1)
+theme = SubResource("Theme_lquwl")
+
+[node name="GridContainer" type="GridContainer" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer"]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="ColorRect" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect3" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect4" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect5" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect6" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect7" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect8" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Control" type="Control" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_7mycd")
+theme_override_fonts/normal_font = ExtResource("5_lquwl")
+theme_override_font_sizes/normal_font_size = 69
+text = "LIVES:
+STEPS:
+FLIPS:"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_fonts/normal_font = ExtResource("5_lquwl")
+theme_override_font_sizes/normal_font_size = 69
+text = "X
+X
+X"
+
+[node name="ColorRect" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
