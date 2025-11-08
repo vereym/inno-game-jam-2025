@@ -87,7 +87,9 @@ position = Vector2(1625, 1857)
 sprite_frames = SubResource("SpriteFrames_rhqlf")
 autoplay = "default"
 
-[node name="Area2D" type="Area2D" parent="Goal"]
+[node name="GoalArea" type="Area2D" parent="Goal"]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/GoalArea"]
 shape = SubResource("RectangleShape2D_l5lfc")

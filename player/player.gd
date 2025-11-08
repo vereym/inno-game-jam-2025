@@ -57,5 +57,6 @@ func move(dir):
         moving = false
 
 
-func _on_body_entered(_body: Node2D) -> void:
-    self.goal_reached.emit()
+func _on_area_entered(area: Area2D) -> void:
+    if area.name == "GoalArea":
+        self.goal_reached.emit()
