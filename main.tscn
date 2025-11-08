@@ -54,11 +54,11 @@ unique_name_in_owner = true
 
 [node name="Player" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
-position = Vector2(12, 12)
+position = Vector2(375, 375)
 
 [node name="Camera2D" type="Camera2D" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport/Player"]
 unique_name_in_owner = true
-zoom = Vector2(5.051, 5.051)
+zoom = Vector2(0.364, 0.364)
 
 [node name="ColorRect" type="ColorRect" parent="Ui/HBoxContainer"]
 layout_mode = 2
