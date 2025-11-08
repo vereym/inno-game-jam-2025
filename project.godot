@@ -59,6 +59,10 @@ coin_flip={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="goal"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
