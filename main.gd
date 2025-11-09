@@ -9,5 +9,10 @@ func _ready() -> void:
 
     %LevelManager.level_changed.connect(
         func():
-            %Player.position = %LevelManager.get_starting_position()
+            %Player.reset(%LevelManager.get_starting_position())
     )
+
+func _input(event):
+    if event.is_action_pressed("restart_level"):
+        %Player.reset(%LevelManager.get_starting_position())
+        %LevelManager.reset_level()

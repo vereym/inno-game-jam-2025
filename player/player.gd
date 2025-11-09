@@ -12,7 +12,7 @@ enum Movement {
 
 var moving := false
 var animation_speed := 10
-var tile_size := 64
+var tile_size := 250
 var direction_vectors := {
     "left": Vector2.LEFT,
     "right": Vector2.RIGHT,
@@ -56,6 +56,9 @@ func move(dir):
         await tween.finished
         moving = false
 
+func reset(new_position: Vector2):
+    self.position = new_position
+    current_movement = Movement.Normal
 
 func _on_area_entered(area: Area2D) -> void:
     if area.name == "GoalArea":
