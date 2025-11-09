@@ -91,8 +91,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x7c3f")
 }],
-"loop": true,
-"name": &"new_animation",
+"loop": false,
+"name": &"default",
 "speed": 8.0
 }]
 
@@ -159,12 +159,10 @@ unique_name_in_owner = true
 position = Vector2(-10.999999, -169)
 scale = Vector2(1.8342875, 1.8342875)
 sprite_frames = SubResource("SpriteFrames_bjvpn")
-animation = &"new_animation"
 
 [node name="Default" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_8t03j")
-animation = &"new_animation"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -31,6 +31,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
         return
     if event.is_action_pressed("coin_flip"):
         current_movement = Movement.Diagonal if current_movement == Movement.Normal else Movement.Normal
+        _play_flip_animation()
 
     if event.is_action_pressed("left"): move("left")
     if event.is_action_pressed("right"): move("right")
@@ -59,6 +60,11 @@ func move(dir):
 func reset(new_position: Vector2):
     self.position = new_position
     current_movement = Movement.Normal
+
+func _play_flip_animation():
+    %Default.hide()
+    %CoinFlip.play()
+    %CoinFlip.animation_finished.connect(func(): %Default.show())
 
 func _on_area_entered(area: Area2D) -> void:
     if area.name == "GoalArea":
