@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://b56pr84gngk4c"]
+
+[ext_resource type="Texture2D" uid="uid://clwckqwyqjilx" path="res://assets/spritesheet-tiles.png" id="1_kkmtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qohg2"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(0, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkbyq"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(250, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktfr2"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(500, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44x8d"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(750, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivpvi"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(1000, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v1st"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(1250, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gtgk"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(1500, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw150"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(1750, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xii2b"]
+atlas = ExtResource("1_kkmtj")
+region = Rect2(0, 250, 250, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhqlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qohg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkbyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktfr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44x8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivpvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v1st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gtgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw150")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xii2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lfc"]
+size = Vector2(240, 240)
+
+[node name="Goal" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rhqlf")
+autoplay = "default"
+
+[node name="GoalArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalArea"]
+scale = Vector2(0.14817668, 0.14817668)
+shape = SubResource("RectangleShape2D_l5lfc")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn6dva8c3l0ci"]
+[gd_scene load_steps=6 format=3 uid="uid://cy3ihft2quwjd"]
 
+[ext_resource type="Script" uid="uid://bx3vhtf41h11s" path="res://startmenu.gd" id="1_kj28g"]
 [ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="1_ynf42"]
 
 [sub_resource type="Theme" id="Theme_vv751"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kj28g")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -59,7 +61,8 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.23
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_kj28g")
@@ -94,3 +97,5 @@ size_flags_vertical = 3
 [node name="Control2" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

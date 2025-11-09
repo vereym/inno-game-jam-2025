@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://fqk3j8xpsshm"]
+[gd_scene load_steps=10 format=3 uid="uid://fqk3j8xpsshm"]
 
 [ext_resource type="Script" uid="uid://bk30kqpaloj50" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cn7ddiwfleaub" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://chqk2eqwhagme" path="res://level/level_manager.gd" id="3_7mycd"]
-[ext_resource type="PackedScene" uid="uid://db8t3ry6t5xw" path="res://level/level.tscn" id="3_lquwl"]
 [ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="5_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
@@ -12,6 +11,14 @@ font_color = Color(0.9, 0.06299999, 0.06299999, 1)
 [sub_resource type="Theme" id="Theme_lquwl"]
 
 [sub_resource type="Theme" id="Theme_7mycd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font = ExtResource("5_lquwl")
+font_size = 103
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font = ExtResource("5_lquwl")
+font_size = 318
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -53,9 +60,6 @@ label_settings = SubResource("LabelSettings_lquwl")
 [node name="LevelManager" type="Node2D" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
 script = ExtResource("3_7mycd")
-
-[node name="Level" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport/LevelManager" instance=ExtResource("3_lquwl")]
-unique_name_in_owner = true
 
 [node name="Player" parent="Ui/HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
@@ -157,3 +161,32 @@ X"
 [node name="ColorRect" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer"]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
+
+[node name="CurrentLevel" type="Label" parent="Ui"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.9999962
+offset_top = 5.999996
+offset_right = 59.999996
+offset_bottom = 24.999996
+text = "LEVEL: "
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="FinishLabel" type="Label" parent="Ui"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -698.0
+offset_top = -353.0
+offset_right = 574.0
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN!
+wow"
+label_settings = SubResource("LabelSettings_7mycd")
