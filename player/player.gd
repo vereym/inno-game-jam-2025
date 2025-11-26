@@ -1,5 +1,8 @@
 extends Area2D
 
+const Inventory := preload("res://player/inventory.gd")
+const Pickup := preload("res://pickup/pickup.gd")
+
 signal goal_reached
 
 enum Movement {
@@ -9,6 +12,7 @@ enum Movement {
 
 @onready var ray := $RayCast2D
 @onready var current_movement := Movement.Normal
+@onready var inventory = Inventory.new()
 
 var moving := false
 var animation_speed := 10
@@ -29,8 +33,12 @@ var diagonal_vectors := {
 func _unhandled_key_input(event: InputEvent) -> void:
     if moving:
         return
-    if event.is_action_pressed("coin_flip"):
-        current_movement = Movement.Diagonal if current_movement == Movement.Normal else Movement.Normal
+    if event.is_action_pressed("coin_flip") and inventory.can_flip():
+        if current_movement == Movement.Normal:
+            current_movement = Movement.Diagonal
+        else:
+            current_movement = Movement.Normal
+
         _play_flip_animation()
 
     if event.is_action_pressed("left"): move("left")
@@ -60,6 +68,11 @@ func move(dir):
 func reset(new_position: Vector2):
     self.position = new_position
     current_movement = Movement.Normal
+    inventory = Inventory.new()
+
+func _pickup_item(item: Pickup):
+    inventory.add(item.type)
+    item.queue_free()
 
 func _play_flip_animation():
     %Default.hide()
@@ -67,5 +80,8 @@ func _play_flip_animation():
     %CoinFlip.animation_finished.connect(func(): %Default.show())
 
 func _on_area_entered(area: Area2D) -> void:
+    if area.name == "PickupArea":
+        _pickup_item(area.get_parent())
+
     if area.name == "GoalArea":
         self.goal_reached.emit()
