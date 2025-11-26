@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b3yg8al4o8psw"]
+
+[ext_resource type="Texture2D" uid="uid://dyj21ckhu0fn1" path="res://assets/spritesheet-animated-bg.png" id="1_nnhua"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkbyq"]
+texture = ExtResource("1_nnhua")
+texture_region_size = Vector2i(250, 250)
+0:0/animation_columns = 4
+0:0/animation_speed = 16.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(250, 250)
+sources/0 = SubResource("TileSetAtlasSource_vkbyq")

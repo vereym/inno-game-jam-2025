@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://q3qm3s6ft7e2"]
+
+[ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="1_3fso6"]
+
+[resource]
+default_font = ExtResource("1_3fso6")
+default_font_size = 36
