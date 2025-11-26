@@ -1,19 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy3ihft2quwjd"]
+[gd_scene load_steps=7 format=3 uid="uid://bn6dva8c3l0ci"]
 
 [ext_resource type="Script" uid="uid://bx3vhtf41h11s" path="res://startmenu.gd" id="1_kj28g"]
 [ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="1_ynf42"]
+[ext_resource type="Texture2D" uid="uid://dhnhvxp53cqgq" path="res://assets/settings-icon.svg" id="3_kpj2f"]
+[ext_resource type="Theme" uid="uid://q3qm3s6ft7e2" path="res://ui-theme.tres" id="4_hftdl"]
 
 [sub_resource type="Theme" id="Theme_vv751"]
 default_font = ExtResource("1_ynf42")
 default_font_size = 240
 
-[sub_resource type="Theme" id="Theme_kj28g"]
-default_font = ExtResource("1_ynf42")
-default_font_size = 34
-
 [sub_resource type="Theme" id="Theme_ynf42"]
 default_font = ExtResource("1_ynf42")
-default_font_size = 34
+default_font_size = 36
 
 [node name="Startmenu" type="Control"]
 layout_mode = 3
@@ -37,9 +35,45 @@ color = Color(0, 0, 0, 1)
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.83
+theme = ExtResource("4_hftdl")
+theme_override_font_sizes/font_size = 60
+icon = ExtResource("3_kpj2f")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.24
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 14.68
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -61,13 +95,41 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.23
 
-[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_kj28g")
+size_flags_stretch_ratio = 2.5
+theme = ExtResource("4_hftdl")
 theme_override_font_sizes/font_size = 80
-text = "START GAME"
+text = " START GAME "
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+theme = ExtResource("4_hftdl")
+theme_override_font_sizes/font_size = 80
+text = " CONTINUE "
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelSelectButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_hftdl")
+theme_override_font_sizes/font_size = 80
+text = "LEVEL
+SELECT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -77,17 +139,19 @@ size_flags_stretch_ratio = 0.23
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ynf42")
-text = "CONTROLS : WASD or ARROW KEYS"
+text = "WASD/ARROW KEYS to MOVE
+SPACE to FLIP"
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.85
 
 [node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_kj28g")
+theme = ExtResource("4_hftdl")
 text = "QUIT"
 
 [node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -98,4 +162,4 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]

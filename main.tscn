@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://fqk3j8xpsshm"]
+[gd_scene load_steps=11 format=3 uid="uid://fqk3j8xpsshm"]
 
 [ext_resource type="Script" uid="uid://bk30kqpaloj50" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cn7ddiwfleaub" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://chqk2eqwhagme" path="res://level/level_manager.gd" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bmuk3a4qpg4k7" path="res://assets/coin-min.png" id="4_lquwl"]
 [ext_resource type="FontFile" uid="uid://oxac8qanpy2a" path="res://assets/ukai.ttc" id="5_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
@@ -121,10 +122,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect8" type="ColorRect" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="ColorRect8" type="Container" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer/GridContainer/ColorRect8"]
+scale = Vector2(0.7800002, 0.79200006)
+texture = ExtResource("4_lquwl")
+centered = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ui/HBoxContainer/MarginContainer/VBoxContainer"]
 z_index = 1
