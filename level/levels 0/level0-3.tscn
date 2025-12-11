@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://d2jt5gc3c5ntd"]
+[gd_scene load_steps=5 format=4 uid="uid://d2jt5gc3c5ntd"]
 
 [ext_resource type="TileSet" uid="uid://b3yg8al4o8psw" path="res://level/animated_floor_tileset.tres" id="1_ejlue"]
 [ext_resource type="TileSet" uid="uid://d3tw4menpqug0" path="res://level/custom_tileset.tres" id="2_6847f"]
 [ext_resource type="PackedScene" uid="uid://b56pr84gngk4c" path="res://level/goal.tscn" id="3_ejlue"]
+[ext_resource type="PackedScene" uid="uid://cscefgy4o8iid" path="res://pickup/pickup.tscn" id="4_6847f"]
 
 [node name="level3" type="Node2D"]
 
@@ -18,28 +19,11 @@ tile_set = ExtResource("2_6847f")
 [node name="Goal" parent="." instance=ExtResource("3_ejlue")]
 position = Vector2(1625, 2625)
 
-[node name="Node2D" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 2042.0
-offset_top = 3025.0
-offset_right = 2211.0
-offset_bottom = 3194.0
+[node name="Pickup" parent="." instance=ExtResource("4_6847f")]
+position = Vector2(2125, 3375)
 
-[node name="Node2D2" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 2039.0
-offset_top = 3256.0
-offset_right = 2208.0
-offset_bottom = 3425.0
-color = Color(1, 1, 0, 1)
-
-[node name="Node2D3" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 2295.0
-offset_top = 1060.0
-offset_right = 2464.0
-offset_bottom = 1229.0
-color = Color(1, 1, 0, 1)
+[node name="Pickup2" parent="." instance=ExtResource("4_6847f")]
+position = Vector2(2375, 1125)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(2125, 3125)

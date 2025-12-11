@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://csyuiojf8tco4"]
+[gd_scene load_steps=5 format=4 uid="uid://csyuiojf8tco4"]
 
 [ext_resource type="TileSet" uid="uid://b3yg8al4o8psw" path="res://level/animated_floor_tileset.tres" id="1_sm332"]
 [ext_resource type="TileSet" uid="uid://d3tw4menpqug0" path="res://level/custom_tileset.tres" id="2_rcwil"]
 [ext_resource type="PackedScene" uid="uid://b56pr84gngk4c" path="res://level/goal.tscn" id="3_sm332"]
+[ext_resource type="PackedScene" uid="uid://cscefgy4o8iid" path="res://pickup/pickup.tscn" id="4_s6vup"]
 
 [node name="level2" type="Node2D"]
 
@@ -18,29 +19,14 @@ tile_set = ExtResource("2_rcwil")
 [node name="Goal" parent="." instance=ExtResource("3_sm332")]
 position = Vector2(2125, 3125)
 
-[node name="Node2D2" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 1537.0
-offset_top = 1532.0
-offset_right = 1706.0
-offset_bottom = 1701.0
-color = Color(1, 1, 0, 1)
+[node name="Pickup" parent="." instance=ExtResource("4_s6vup")]
+position = Vector2(1625, 1625)
 
-[node name="Node2D4" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = -2211.0
-offset_top = 3799.0
-offset_right = -2042.0
-offset_bottom = 3968.0
-color = Color(1, 1, 0, 1)
+[node name="Pickup2" parent="." instance=ExtResource("4_s6vup")]
+position = Vector2(-2125, 3875)
 
-[node name="Node2D3" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 1537.0
-offset_top = 2803.0
-offset_right = 1706.0
-offset_bottom = 2972.0
-color = Color(1, 1, 0, 1)
+[node name="Pickup3" parent="." instance=ExtResource("4_s6vup")]
+position = Vector2(1625, 2875)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(1625, 1125)

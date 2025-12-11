@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://vt2ih2ge8a1w"]
+[gd_scene load_steps=7 format=4 uid="uid://vt2ih2ge8a1w"]
 
 [ext_resource type="Texture2D" uid="uid://dyj21ckhu0fn1" path="res://assets/spritesheet-animated-bg.png" id="1_t8c3y"]
 [ext_resource type="TileSet" uid="uid://d3tw4menpqug0" path="res://level/custom_tileset.tres" id="2_twt2g"]
 [ext_resource type="PackedScene" uid="uid://b56pr84gngk4c" path="res://level/goal.tscn" id="3_t8c3y"]
+[ext_resource type="PackedScene" uid="uid://cscefgy4o8iid" path="res://pickup/pickup.tscn" id="4_twt2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkbyq"]
 texture = ExtResource("1_t8c3y")
@@ -34,21 +35,8 @@ tile_set = ExtResource("2_twt2g")
 [node name="Goal" parent="." instance=ExtResource("3_t8c3y")]
 position = Vector2(1625, 875)
 
-[node name="Node2D" type="ColorRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(100, 100)
-offset_left = 1544.0
-offset_top = 2566.0
-offset_right = 1713.0
-offset_bottom = 2735.0
-
-[node name="Node2D2" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
-offset_left = 1535.0
-offset_top = 2791.0
-offset_right = 1704.0
-offset_bottom = 2960.0
-color = Color(1, 1, 0, 1)
+[node name="Pickup" parent="." instance=ExtResource("4_twt2g")]
+position = Vector2(1625, 2875)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(1625, 2625)
