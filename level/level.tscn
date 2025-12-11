@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://db8t3ry6t5xw"]
+[gd_scene load_steps=5 format=4 uid="uid://db8t3ry6t5xw"]
 
 [ext_resource type="TileSet" uid="uid://d3tw4menpqug0" path="res://level/custom_tileset.tres" id="1_7lnir"]
 [ext_resource type="TileSet" uid="uid://b3yg8al4o8psw" path="res://level/animated_floor_tileset.tres" id="1_vkbyq"]
-[ext_resource type="SpriteFrames" uid="uid://c5op2mhvan00u" path="res://level/animated-goal.tres" id="3_vkbyq"]
+[ext_resource type="PackedScene" uid="uid://b56pr84gngk4c" path="res://level/goal.tscn" id="3_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://drxbfxkkv3i4j" path="res://enemy/enemy.tscn" id="4_vkbyq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lfc"]
-size = Vector2(240, 240)
 
 [node name="Level" type="Node2D"]
 
@@ -19,19 +16,8 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAAAAwACAAEAAAABAAAAAwADAAAAAAACAAAAAwADAAAAAAADAAAAAwADAAAAAAAEAAAAAwABAAEAAAAFAAAAAwADAAAAAAAGAAAAAwADAAAAAAAHAAAAAwADAAAAAAAIAAAAAwADAAAAAAAJAAAAAwADAAAAAAAKAAAAAwADAAAAAAALAAAAAwADAAEAAAALAAEAAwAEAAEAAAALAAIAAwAEAAEAAAALAAMAAwAEAAEAAAALAAQAAwAEAAEAAAALAAUAAwAEAAEAAAALAAYAAwAEAAEAAAALAAcAAwAEAAEAAAAAAAEAAwAEAAEAAAAAAAIAAwAEAAEAAAAAAAMAAwAEAAEAAAAAAAQAAwAEAAEAAAAAAAUAAwAEAAEAAAAAAAgAAwAEAAEAAAABAAcAAwADAAAAAAAEAAEAAwAEAAEAAAAEAAIAAwAEAAEAAAAJAAcAAwAEAAAAAAAIAAYAAwAEAAAAAAAHAAUAAwAEAAAAAAAGAAQAAwAEAAAAAAAEAAQAAwAEAAEAAAAFAAMAAwABAAAAAwAEAAUAAwABAAAAAQAEAAMAAwABAAEAAgADAAcAAwADAAAAAAACAAcAAwADAAAAAAAEAAcAAwABAAAAAwAJAAkAAwADAAAAAAAIAAkAAwADAAAAAAAHAAkAAwADAAAAAAAGAAkAAwADAAAAAAAFAAkAAwADAAAAAAAEAAkAAwADAAAAAAADAAkAAwADAAAAAAACAAkAAwADAAAAAAABAAkAAwADAAAAAAAAAAkAAwAFAAAAAAAAAAcAAwABAAEAAgAAAAYAAwAEAAEAAAAKAAkAAwADAAAAAAALAAgAAwAEAAEAAAAKAAgAAwAEAAAAAAALAAkAAwAAAAEAAAA=")
 tile_set = ExtResource("1_7lnir")
 
-[node name="Goal" type="AnimatedSprite2D" parent="."]
+[node name="Goal" parent="." instance=ExtResource("3_vkbyq")]
 position = Vector2(2375, 625)
-sprite_frames = ExtResource("3_vkbyq")
-autoplay = "default"
-frame = 11
-frame_progress = 0.87398696
-
-[node name="GoalArea" type="Area2D" parent="Goal"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/GoalArea"]
-shape = SubResource("RectangleShape2D_l5lfc")
 
 [node name="Enemy" parent="." instance=ExtResource("4_vkbyq")]
 position = Vector2(1625, 1375)
