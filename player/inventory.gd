@@ -13,7 +13,11 @@ func add(pickup_type: Pickup.Type):
 		_inventory[pickup_type] = 1
 
 
-func can_flip() -> bool:
+func use_coin_if_available() -> bool:
 	if _inventory.has(Pickup.Type.Coin):
-		return true if _inventory[Pickup.Type.Coin] > 0 else false
+		if _inventory[Pickup.Type.Coin] > 0:
+			_inventory[Pickup.Type.Coin] -= 1
+			return true
+		else:
+			return false
 	return false

@@ -34,7 +34,7 @@ var diagonal_vectors := {
 func _unhandled_key_input(event: InputEvent) -> void:
 	if moving:
 		return
-	if event.is_action_pressed("coin_flip") and inventory.can_flip():
+	if event.is_action_pressed("coin_flip") and inventory.use_coin_if_available():
 		if current_movement == Movement.Normal:
 			current_movement = Movement.Diagonal
 		else:
