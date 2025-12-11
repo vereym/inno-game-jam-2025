@@ -13,16 +13,18 @@ func _ready():
 
 
 const levels0 := {
-	"level1": preload("res://level/levels 0/level0-1.tscn"),
-	"level2": preload("res://level/levels 0/level0-2.tscn"),
-	"level3": preload("res://level/levels 0/level0-3.tscn"),
-	"level4": preload("res://level/levels 0/level0-4.tscn"),
-	"level5": preload("res://level/levels 0/level0-5.tscn"),
+	"level1": preload("res://level/level-scenes/level0-1.tscn"),
+	"level2": preload("res://level/level-scenes/level0-2.tscn"),
+	"level3": preload("res://level/level-scenes/level0-3.tscn"),
+	"level4": preload("res://level/level-scenes/level0-4.tscn"),
+	"level5": preload("res://level/level-scenes/level0-5.tscn"),
+	"level6": preload("res://level/level-scenes/level0-6.tscn"),
+	"level7": preload("res://level/level-scenes/level0-7.tscn"),
 }
 
 
 func next_level():
-	if current_level_number >= 5:
+	if current_level_number >= len(levels0):
 		finished.emit()
 		return
 
